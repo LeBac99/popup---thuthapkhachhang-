@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu đồ & Bảng Cảnh báo Giảm Mạnh</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .warning {
+            background-color: rgba(255, 0, 0, 0.2);
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Biểu đồ So Sánh Tỷ Lệ Phần Trăm & Cảnh Báo</h2>
+        <canvas id="comboChart"></canvas>
+        <h3>Bảng Dữ Liệu</h3>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Ngày</th>
+                    <th>vtc_logingame</th>
+                    <th>vtc_complete_registration</th>
+                    <th>vtc_complete_registration_new</th>
+                    <th>vtc_complete_registration_old</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('comboChart').getContext('2d');
+        
+        function checkAlert(data) {
+            let baseValue = data[0];
+            return data.map((value, index) => {
+                if (index === 0) return "rgba(54, 162, 235, 0.8)"; 
+                let percentDrop = ((baseValue - value) / baseValue) * 100;
+                return percentDrop > 30 ? "rgba(255, 0, 0, 0.8)" : "rgba(54, 162, 235, 0.8)";
+            });
+        }
+
+        const rawData = {
+            labels: ["2025-02-05", "2025-02-06"],
+            vtc_logingame: [100, 65],
+            vtc_complete_registration: [99, 40],
+            vtc_complete_registration_new: [98, 30],
+            vtc_complete_registration_old: [97, 30]
+        };
+
+        const data = {
+            labels: rawData.labels,
+            datasets: [
+                {
+                    type: 'bar',
+                    label: "vtc_logingame",
+                    data: rawData.vtc_logingame,
+                    backgroundColor: checkAlert(rawData.vtc_logingame),
+                },
+                {
+                    type: 'bar',
+                    label: "vtc_complete_registration",
+                    data: rawData.vtc_complete_registration,
+                    backgroundColor: checkAlert(rawData.vtc_complete_registration),
+                },
+                {
+                    type: 'bar',
+                    label: "vtc_complete_registration_new",
+                    data: rawData.vtc_complete_registration_new,
+                    backgroundColor: checkAlert(rawData.vtc_complete_registration_new),
+                },
+                {
+                    type: 'bar',
+                    label: "vtc_complete_registration_old",
+                    data: rawData.vtc_complete_registration_old,
+                    backgroundColor: checkAlert(rawData.vtc_complete_registration_old),
+                }
+            ]
+        };
+
+        const options = {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'category',
+                    title: {
+                        display: true,
+                        text: 'Ngày'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Tỷ lệ phần trăm (%)'
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            let dataset = rawData[tooltipItem.dataset.label];
+                            let baseValue = dataset[0];
+                            let value = dataset[tooltipItem.dataIndex];
+                            let percentDrop = ((baseValue - value) / baseValue) * 100;
+                            let warning = percentDrop > 30 ? " ⚠️ Giảm mạnh!" : "";
+                            return `${tooltipItem.dataset.label}: ${value}%${warning}`;
+                        }
+                    }
+                },
+                legend: {
+                    position: 'top',
+                }
+            }
+        };
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+
+        function renderTable() {
+            const tableBody = document.getElementById('dataTable').querySelector('tbody');
+            tableBody.innerHTML = '';
+            
+            rawData.labels.forEach((date, index) => {
+                let row = `<tr>
+                    <td>${date}</td>
+                    <td class="${rawData.vtc_logingame[index] < 70 ? 'warning' : ''}">${rawData.vtc_logingame[index]}</td>
+                    <td class="${rawData.vtc_complete_registration[index] < 70 ? 'warning' : ''}">${rawData.vtc_complete_registration[index]}</td>
+                    <td class="${rawData.vtc_complete_registration_new[index] < 70 ? 'warning' : ''}">${rawData.vtc_complete_registration_new[index]}</td>
+                    <td class="${rawData.vtc_complete_registration_old[index] < 70 ? 'warning' : ''}">${rawData.vtc_complete_registration_old[index]}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        renderTable();
+    </script>
+</body>
+</html>

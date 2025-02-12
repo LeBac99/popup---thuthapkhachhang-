@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu đồ Phễu So Sánh</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: black;
+            color: white;
+        }
+        .group-a {
+            background-color: grey;
+            color: white;
+        }
+        .group-b {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Biểu đồ Phễu So Sánh</h2>
+        <canvas id="funnelChart"></canvas>
+        <h3>Bảng Dữ Liệu</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sự kiện</th>
+                    <th>Hôm qua</th>
+                    <th>Hôm nay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Đăng nhập</td><td class="group-a">88</td><td class="group-b">97</td></tr>
+                <tr><td>Đăng ký</td><td class="group-a">80</td><td class="group-b">85</td></tr>
+                <tr><td>Chơi lần đầu</td><td class="group-a">73</td><td class="group-b">91</td></tr>
+                <tr><td>Nạp tiền</td><td class="group-a">55</td><td class="group-b">67</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('funnelChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Đăng nhập", "Đăng ký", "Chơi lần đầu", "Nạp tiền"],
+                datasets: [
+                    {
+                        label: "Hôm qua",
+                        data: [88, 80, 73, 55],
+                        backgroundColor: "grey"
+                    },
+                    {
+                        label: "Hôm nay",
+                        data: [97, 85, 91, 67],
+                        backgroundColor: "black"
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 150
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
