@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Mã Thưởng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .status-used {
+            color: red;
+            font-weight: bold;
+        }
+        .status-unused {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quản lý Mã Thưởng</h2>
+        <div class="form-group">
+            <label for="code">Mã Thưởng:</label>
+            <input type="text" id="code" placeholder="Nhập mã thưởng">
+        </div>
+        <div class="form-group">
+            <label for="service">Dịch vụ Game:</label>
+            <input type="text" id="service" placeholder="Nhập dịch vụ game">
+        </div>
+        <div class="form-group">
+            <label for="tier">Mốc Mã:</label>
+            <select id="tier">
+                <option value="500k">500k</option>
+                <option value="1M">1M</option>
+                <option value="2M">2M</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="type">Loại Mã:</label>
+            <select id="type">
+                <option value="chung">Chung</option>
+                <option value="rieng">Riêng</option>
+                <option value="thoihan">Thời hạn</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="expiry">Thời gian hết hạn:</label>
+            <input type="date" id="expiry">
+        </div>
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Mã</button>
+        <button class="btn btn-success"><i class="fas fa-file-import"></i> Nhập từ Excel</button>
+        <button class="btn btn-danger"><i class="fas fa-file-export"></i> Xuất ra Excel</button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Dịch vụ</th>
+                    <th>Mốc</th>
+                    <th>Loại</th>
+                    <th>Hết hạn</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CODE1234</td>
+                    <td>Game A</td>
+                    <td>500k</td>
+                    <td>Chung</td>
+                    <td>2025-12-31</td>
+                    <td class="status-unused">Chưa sử dụng</td>
+                    <td>
+                        <button class="btn btn-primary"><i class="fas fa-edit"></i> Sửa</button>
+                        <button class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CODE5678</td>
+                    <td>Game B</td>
+                    <td>1M</td>
+                    <td>Riêng</td>
+                    <td>2024-06-15</td>
+                    <td class="status-used">Đã sử dụng</td>
+                    <td>
+                        <button class="btn btn-primary"><i class="fas fa-edit"></i> Sửa</button>
+                        <button class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
