@@ -1,55 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Form with Close Button</title>
+    <title>Form Thu Thập Thông Tin</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        body {
             font-family: 'Poppins', sans-serif;
+        }
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #fceabb, #f8b500);
+            background: url('https://i.imgur.com/your-background.jpg') no-repeat center/cover;
         }
 
-        .popup-overlay {
+        .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 999;
-        }
-
-        .popup-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
 
-        .popup-wrapper h2 {
+        .form-container {
+            position: relative;
+            width: 500px;
+            padding: 30px;
             text-align: center;
-            margin-bottom: 15px;
+            background: rgba(34, 34, 34, 0.95);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid gold;
+        }
+
+        .form-title {
             font-size: 22px;
-            color: #333;
+            font-weight: bold;
+            color: gold;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-title::before,
+        .form-title::after {
+            content: '⟵';
+            position: absolute;
+            color: gold;
+            font-size: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .form-title::before {
+            left: 20px;
+            /* Điều chỉnh gần hơn */
+        }
+
+        .form-title::after {
+            content: '⟶';
+            right: 20px;
+            /* Điều chỉnh gần hơn */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: #f3d9a4;
+            color: #222;
+            text-align: center;
+        }
+
+        .form-group input::placeholder {
+            color: #555;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #F7C42D, #D79D00);
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.2s;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
         }
 
         .close-btn {
@@ -57,95 +121,48 @@
             top: 10px;
             right: 15px;
             font-size: 24px;
-            color: #555;
+            color: white;
             cursor: pointer;
-            background: none;
-            border: none;
         }
 
         .close-btn:hover {
-            color: #ff0000;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        input[type="text"], input[type="email"], input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
-            outline: none;
-        }
-
-        .submit-btn, .toggle-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: transform 0.2s;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover, .toggle-btn:hover {
-            transform: scale(1.03);
+            color: #ff4d4d;
         }
     </style>
 </head>
-<body>
-    <!-- <button class="toggle-btn" onclick="togglePopup()">Hiển thị form</button> -->
 
-    <div class="popup-overlay" id="popup">
-        <div class="popup-wrapper">
-            <button class="close-btn" onclick="togglePopup()">×</button>
-            <h2>Thu Thập Thông Tin</h2>
-            <div class="form-group">
-                <label for="name">Họ và Tên</label>
-                <input type="text" id="name" placeholder="Nhập họ và tên">
-            </div>
-            <div class="form-group">
-                <label for="phone">Số Điện Thoại</label>
-                <input type="text" id="phone" placeholder="Nhập số điện thoại">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Nhập email">
-            </div>
-            <div class="form-group">
-                <label for="cccd">CCCD</label>
-                <input type="text" id="cccd" placeholder="Nhập CCCD">
-            </div>
-            <div class="form-group">
-                <label for="birthday">Sinh Nhật</label>
-                <input type="date" id="birthday">
-            </div>
-            <button class="submit-btn">Gửi</button>
+<body>
+
+    <!-- Overlay -->
+    <div class="overlay">
+        <div class="form-container">
+            <span class="close-btn" onclick="closeForm()">×</span>
+            <h2 class="form-title">THU THẬP THÔNG TIN</h2>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" placeholder="Họ tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="CCCD/Passport" required>
+                </div>
+                <button type="submit" class="submit-btn">Thu Thập Thông Tin</button>
+            </form>
         </div>
     </div>
 
     <script>
-        function togglePopup() {
-            const popup = document.getElementById('popup');
-            popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+        function closeForm() {
+            document.querySelector('.overlay').style.display = 'none';
         }
     </script>
+
 </body>
+
 </html>

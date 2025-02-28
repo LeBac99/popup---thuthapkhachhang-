@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Popup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #121212;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .popup-wrapper {
+            position: relative;
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            background: #222;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1);
+            opacity: 1;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        .icon-status {
+            width: 60px;
+            height: 60px;
+            margin: 10px auto;
+        }
+
+        /* Icon SVG thay thế */
+        .success .icon-status::before {
+            content: '✔';
+            display: block;
+            font-size: 50px;
+            color: #2ecc71;
+        }
+
+        .error .icon-status::before {
+            content: '✖';
+            display: block;
+            font-size: 50px;
+            color: #e74c3c;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #F7C42D, #D79D00);
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff4d4d;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Popup Overlay chứa cả 2 popup -->
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <!-- Popup Thành Công -->
+            <div class="popup-wrapper success">
+                <span class="close-btn" onclick="closePopup()">×</span>
+                <div class="icon-status"></div>
+                <h2>ĐĂNG KÝ THÀNH CÔNG</h2>
+                <p>Đăng ký của bạn đã được ghi nhận, vui lòng theo dõi danh sách đăng ký tại <a href="#" style="color:#F7C42D;">Fanpage</a> của chúng tôi.</p>
+                <a href="#" class="btn">Trang Chủ</a>
+            </div>
+
+            <!-- Popup Thất Bại -->
+            <div class="popup-wrapper error">
+                <span class="close-btn" onclick="closePopup()">×</span>
+                <div class="icon-status"></div>
+                <h2>ĐĂNG KÝ THẤT BẠI</h2>
+                <p>Hệ thống đã đủ lượt đăng ký, vui lòng theo dõi <a href="#" style="color:#F7C42D;">Fanpage</a> để nhận thông tin về các đợt đăng ký tiếp theo.</p>
+                <a href="#" class="btn">Trang Chủ</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.querySelector('.popup-overlay').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

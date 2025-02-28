@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách khách hàng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('background.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .customer-list {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+        }
+        .customer-list h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: gold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        th {
+            background: rgba(255, 215, 0, 0.3);
+        }
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .refresh-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .refresh-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="customer-list">
+        <h2>Danh Sách Khách Hàng Đã Đăng Ký</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Họ và Tên</th>
+                    <th>SĐT</th>
+                    <th>Email</th>
+                    <th>CCCD</th>
+                    <th>Ngày Sinh</th>
+                </tr>
+            </thead>
+            <tbody id="customer-table">
+                <!-- Dữ liệu khách hàng sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+        <!-- <button class="refresh-btn" onclick="loadCustomers()">Làm Mới</button> -->
+    </div>
+
+    <script>
+        // Dữ liệu demo
+        const customers = [
+            { name: "Nguyễn Văn A", phone: "0987654321", email: "a@gmail.com", cccd: "123456789", birthday: "1995-06-15" },
+            { name: "Trần Thị B", phone: "0901234567", email: "b@gmail.com", cccd: "987654321", birthday: "2000-08-22" },
+            { name: "Lê Văn C", phone: "0912345678", email: "c@gmail.com", cccd: "456789123", birthday: "1998-12-05" }
+        ];
+
+        function loadCustomers() {
+            const tableBody = document.getElementById("customer-table");
+            tableBody.innerHTML = ""; // Xóa danh sách cũ
+            customers.forEach(customer => {
+                let row = `<tr>
+                    <td>${customer.name}</td>
+                    <td>${customer.phone}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.cccd}</td>
+                    <td>${customer.birthday}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Gọi loadCustomers khi trang tải xong
+        window.onload = loadCustomers;
+    </script>
+</body>
+</html>

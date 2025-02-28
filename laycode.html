@@ -244,11 +244,14 @@
             border-collapse: collapse;
             margin-top: 20px;
         }
-        .table th, .table td {
+
+        .table th,
+        .table td {
             border: 1px solid #ccc;
             padding: 10px;
             text-align: center;
         }
+
         .table th {
             background-color: #007bff;
             color: #fff;
@@ -296,7 +299,7 @@
 
         <div class="message" id="successMessage">Mã đã được cấp thành công và gửi qua Zalo!</div>
         <div class="highlight" id="highlightMessage" style="display:none;">Kiểm tra gặp vấn đề, vui lòng thử lại!</div>
-       
+
         <button class="btn btn-danger"><i class="fas fa-file-export"></i> Xuất ra Excel</button>
         <table class="table">
             <thead>
@@ -305,6 +308,7 @@
                     <th>ScoinId</th>
                     <th>Loại</th>
                     <th>Người tạo</th>
+                    <th>Trạng thái</th>
                     <th>Thời gian</th>
                 </tr>
             </thead>
@@ -314,6 +318,7 @@
                     <td>123123</td>
                     <td>Riêng</td>
                     <td>Lê Văn Bắc</td>
+                    <td class="status-used">Đã sử dụng</td>
                     <td>31/12/2025 10:20</td>
                 </tr>
                 <tr>
@@ -321,11 +326,12 @@
                     <td>123123</td>
                     <td>Riêng</td>
                     <td>Lê Văn Bắc</td>
+                    <td class="status-used">Cấp lỗi</td>
                     <td>31/12/2025 10:20</td>
                 </tr>
             </tbody>
         </table>
-    
+
     </div>
 
     <script>
