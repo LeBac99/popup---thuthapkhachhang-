@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng Quay May Mắn</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .wheel-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid #fff;
+            position: relative;
+            transition: transform 4s ease-out;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        .pointer {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: gold;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border: 3px solid white;
+            box-shadow: 0px 0px 10px white;
+        }
+
+        .spin-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ccc, white);
+            color: black;
+            font-weight: bold;
+            font-size: 22px;
+            border: 5px solid gold;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px gold;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Vòng Quay May Mắn</h2>
+    <div class="wheel-container">
+        <div class="pointer"></div>
+        <canvas id="wheelCanvas" width="380" height="380"></canvas>
+        <button class="spin-button" onclick="spinWheel()">QUAY</button>
+    </div>
+
+    <script>
+        let isSpinning = false;
+        const canvas = document.getElementById("wheelCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const prizes = ["Giftcode Hoàng Kim", "Thẻ 50K", "Chúc bạn may mắn", "Thẻ 20K", "Galaxy S23 Ultra", "Thẻ 100K", "Giftcode Vương Giả", "Thẻ 500K"];
+        const colors = ["#FFD700", "#FF4500", "#111", "#32CD32", "#9400D3", "#FF8C00", "#32CD32", "#FF0000"];
+
+        function drawWheel() {
+            const numPrizes = prizes.length;
+            const angleStep = (2 * Math.PI) / numPrizes;
+
+            for (let i = 0; i < numPrizes; i++) {
+                ctx.beginPath();
+                ctx.moveTo(190, 190);
+                ctx.arc(190, 190, 190, angleStep * i, angleStep * (i + 1));
+                ctx.closePath();
+                ctx.fillStyle = colors[i];
+                ctx.fill();
+                ctx.stroke();
+
+                // Vẽ text
+                ctx.save();
+                ctx.translate(190, 190);
+                ctx.rotate(angleStep * i + angleStep / 2);
+                ctx.fillStyle = "#fff";
+                ctx.font = "18px Arial";
+                ctx.fillText(prizes[i], 80, 10);
+                ctx.restore();
+            }
+        }
+
+        function spinWheel() {
+            if (isSpinning) return;
+            isSpinning = true;
+
+            const randomDegree = Math.floor(Math.random() * 360) + 3600;
+            canvas.style.transition = "transform 4s ease-out";
+            canvas.style.transform = `rotate(${randomDegree}deg)`;
+
+            setTimeout(() => {
+                alert("Bạn đã quay trúng: " + prizes[Math.floor(Math.random() * prizes.length)]);
+                isSpinning = false;
+            }, 4000);
+        }
+
+        drawWheel();
+    </script>
+</body>
+</html>

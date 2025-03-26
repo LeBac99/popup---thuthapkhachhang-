@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Hoa Sơn Kiếm Thế</title>
+	<meta name="description" content="Chờ đón phiên bản mới" />
+	<meta name="keywords" content="Chờ đón phiên bản mới" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="css/mcgic.css">
+	
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<audio id="music" class="d-none" controls autoplay loop>
+			<source src="images/mymusic.mp3" type="audio/mpeg">
+		</audio>
+		<!--  <iframe src="images/mymusic.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+
+		<section id="section1" class="section section1">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page1.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page1-sm.jpg" alt="" />
+			</div>
+			<div class="section-content">
+				<div class="user d-flex justify-content-around align-items-center">
+					<div class="info">
+						<!-- Xin chào: <span>Ngọc Trinh</span> | <a href="#popupDangnhap" title="Thoát"
+							data-bs-toggle="modal">Thoát</a> -->
+
+						<a class="pt-2 text-uppercase text-decoration-none text-white" href="#" title="Đăng nhập">Đăng
+							nhập</a>
+					</div>
+
+					<a id="sound" class="sound inactive" href="#" title="" onclick="PlayStop()"></a>
+				</div>
+				<div class="ic-amduong desktop">
+					<img class="img-fluid" src="images/ic-amduong.png" alt="" />
+				</div>
+				<div class="slogan desktop">
+					<img class="img-fluid" src="images/slogan.png" alt="" />
+				</div>
+				<div class="ic-play animate__animated animate__tada animate__infinite animate__slow">
+					<a class="" href="https://youtu.be/mkIQqnXYcxk?si=JNmUckc_RCSLZaF7" title=""
+						data-fancybox="trailer"><img class="img-fluid" src="images/ic-play.png" alt="" /></a>
+				</div>
+				<div class="logo">
+					<img class="img-fluid" src="images/logo.png" alt="" />
+				</div>
+				<div class="download-main desktop">
+					<div class="download-group d-flex justify-content-center align-items-center">
+						<div class="napthe pulse">
+							<a href="#" title=""><img class="img-fluid" src="images/btn-napthe-page1.png" alt="" /></a>
+						</div>
+						<div class="apk-pc d-flex flex-column align-items-center gap-2">
+							<a href="#" title=""><img class="img-fluid" src="images/btn-apk-page1.png" alt="" /></a>
+							<a href="#" title=""><img class="img-fluid" src="images/btn-pc-page1.png" alt="" /></a>
+						</div>
+						<div class="store-search d-flex flex-column align-items-center">
+							<div class="store-qr d-flex justify-content-center  align-items-center">
+								<div class="app-play d-flex flex-column align-items-center gap-2">
+									<a href="#" title=""><img class="img-fluid" src="images/btn-ios-page1.png"
+											alt="" /></a>
+									<a href="#" title=""><img class="img-fluid" src="images/btn-googleplay-page1.png"
+											alt="" /></a>
+								</div>
+								<a class="ps-2" href="#" title=""><img class="img-fluid" src="images/qr-code.png"
+										alt="" /></a>
+							</div>
+							<a class="pt-2" href="#" title=""><img class="img-fluid" src="images/search-bar.png"
+									alt="" /></a>
+						</div>
+					</div>
+				</div>
+				<div class="download-main mobile">
+					<div class="download-group d-flex justify-content-center align-items-center">
+						<div class="napthe">
+							<a href="#" title=""><img class="img-fluid" src="images/btn-napthe-page1.png" alt="" /></a>
+						</div>
+
+						<div class="store-search d-flex flex-column align-items-center">
+							<div class="store-qr d-flex justify-content-center  align-items-center">
+								<div class="app-play d-flex flex-column align-items-center gap-2">
+									<a href="#" title=""><img class="img-fluid" src="images/btn-ios-page1.png"
+											alt="" /></a>
+									<a href="#" title=""><img class="img-fluid" src="images/btn-googleplay-page1.png"
+											alt="" /></a>
+								</div>
+								<a class="ps-2" href="#" title=""><img class="img-fluid" src="images/qr-code.png"
+										alt="" /></a>
+							</div>
+							<a class="pt-2" href="#" title=""><img class="img-fluid" src="images/search-bar.png"
+									alt="" /></a>
+						</div>
+						<div class="apk-pc d-flex flex-column align-items-center gap-1">
+							<a href="#" title=""><img class="img-fluid" src="images/ic-fb-square.png" alt="" /></a>
+							<a href="#" title=""><img class="img-fluid" src="images/ic-group-square.png" alt="" /></a>
+							<a href="#" title=""><img class="img-fluid" src="images/ic-tiktok-square.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+				<div class="art1-page1 desktop">
+					<img class="img-fluid" src="images/art1-page1.png" alt="" />
+				</div>
+				<div class="art2-page1 desktop">
+					<img class="img-fluid" src="images/art2-page1.png" alt="" />
+				</div>
+				<div class="art3-page1 desktop">
+					<img class="img-fluid" src="images/art3-page1.png" alt="" />
+				</div>
+			</div>
+			<div class="yezi yezi1"></div>
+			<div class="yezi yezi2"></div>
+			<div class="yezi yezi3"></div>
+			<div class="yezi yezi4"></div>
+			<div class="yezi yezi5"></div>
+			<div class="yezi yezi6"></div>
+		</section>
+		<section id="section2" class="section section2">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page2.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page2-sm.jpg" alt="" />
+			</div>
+			<div class="section-content">
+				<h2 class="title"><img class="img-fluid" src="images/title-page2.png" alt="" /></h2>
+				<div class="main-slider d-flex justify-content-end">
+					<div class="col-left">
+						<div class="char-slide-thumb">
+							<div thumbsSlider="" class="swiper mySwiper">
+								<div class="swiper-wrapper d-flex flex-md-column justify-content-center">
+									<div class="swiper-slide">
+										<img class="img-fluid" src="images/ic-hoason.png" alt="" />
+									</div>
+									<div class="swiper-slide">
+										<img class="img-fluid" src="images/ic-ngamy.png" alt="" />
+									</div>
+									<div class="swiper-slide">
+										<img class="img-fluid" src="images/ic-thienvuong.png" alt="" />
+									</div>
+									<div class="swiper-slide">
+										<img class="img-fluid" src="images/ic-thiennhan.png" alt="" />
+									</div>
+									<div class="swiper-slide">
+										<img class="img-fluid" src="images/ic-thuyyen.png" alt="" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--End mySwiper-->
+					</div>
+					<div class="col-right flex-fill">
+						<div class="swiper mySwiper2 mx-auto">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="content-char">
+										<h4 class="name-char"><img class="img-fluid" src="images/name-hoason.png"
+												alt="" /></h4>
+										<div class="spec">
+											<h5 class="sp1-hoason">Cận Chiến</h5>
+											<div class="sp2-hoason">
+												Vũ Khí: Kiếm <br />
+												Hệ ngũ hành: Mộc
+											</div>
+											<div class="sp3">
+												<img class="img-fluid" src="images/img-kill-hoason.png" alt="" />
+											</div>
+										</div>
+										<p class="description">
+											Là một môn phái danh tiếng trên giang hồ, nổi bật với kiếm pháp tinh diệu và
+											nội công thâm hậu. Phái này có hai phe chính là Kiếm tông và Khí tông, từng
+											tranh đấu gay gắt về cách tu luyện võ công.
+
+										</p>
+										<div class="skills d-flex justify-content-start align-items-center">
+											<img class="img-fluid" src="images/skill1-hoason.png" alt="" />
+											<img class="img-fluid" src="images/skill2-hoason.png" alt="" />
+											<img class="img-fluid" src="images/skill3-hoason.png" alt="" />
+											<img class="img-fluid" src="images/skill4-hoason.png" alt="" />
+										</div>
+									</div>
+									<div class="thumb-char">
+										<img class="img-fluid" src="images/char-hoason.png" alt="" />
+										<a class="btn-play animate__animated animate__tada animate__infinite animate__slow"
+											href="#" title="" data-fancybox="trailer"><img class="img-fluid"
+												src="images/btn-play-char.png" alt="" /></a>
+									</div>
+								</div>
+								<!--End swipe-slide1-->
+								<div class="swiper-slide">
+									<div class="content-char">
+										<h4 class="name-char"><img class="img-fluid" src="images/name-ngamy.png"
+												alt="" /></h4>
+										<div class="spec">
+											<h5 class="sp1-ngamy">Cận Chiến</h5>
+											<div class="sp2-ngamy">
+												Vũ Khí: Kiếm <br />
+												Hệ ngũ hành: Thuỷ
+											</div>
+											<div class="sp3">
+												<img class="img-fluid" src="images/img-kill-ngamy.png" alt="" />
+											</div>
+										</div>
+										<p class="description">
+											Phái Nga Mi là một môn phái do nữ giới đứng đầu, nổi danh với kiếm pháp
+											thanh thoát và võ công uyên thâm. Môn phái này có ảnh hưởng lớn trên giang
+											hồ, thường được biết đến với phong cách chiến đấu tinh tế nhưng đầy uy lực.
+										</p>
+										<div class="skills d-flex justify-content-start align-items-center">
+											<img class="img-fluid" src="images/skill1-ngamy.png" alt="" />
+											<img class="img-fluid" src="images/skill2-ngamy.png" alt="" />
+											<img class="img-fluid" src="images/skill3-ngamy.png" alt="" />
+											<img class="img-fluid" src="images/skill4-ngamy.png" alt="" />
+										</div>
+									</div>
+									<div class="thumb-char">
+										<img class="img-fluid" src="images/char-ngamy.png" alt="" />
+										<a class="btn-play animate__animated animate__tada animate__infinite animate__slow"
+											href="#" title="" data-fancybox="trailer"><img class="img-fluid"
+												src="images/btn-play-char.png" alt="" /></a>
+									</div>
+								</div>
+								<!--End swipe-slide2-->
+								<div class="swiper-slide">
+									<div class="content-char">
+										<h4 class="name-char"><img class="img-fluid" src="images/name-thienvuong.png"
+												alt="" /></h4>
+										<div class="spec">
+											<h5 class="sp1-thienvuong">Cận Chiến</h5>
+											<div class="sp2-thienvuong">
+												Vũ Khí: Thương <br />
+												Hệ ngũ hành: Kim
+											</div>
+											<div class="sp3">
+												<img class="img-fluid" src="images/img-kill-thienvuong.png" alt="" />
+											</div>
+										</div>
+										<p class="description">
+											Là một môn phái có nguồn gốc từ các nghĩa quân nổi dậy, sở hữu võ công mạnh
+											mẽ và mang tinh thần trượng nghĩa. Môn phái này thường mở ra các cuộc khởi
+											nghĩa chống lại triều đình để bảo vệ bá tánh, dân lành.
+
+										</p>
+										<div class="skills d-flex justify-content-start align-items-center">
+											<img class="img-fluid" src="images/skill1-thienvuong.png" alt="" />
+											<img class="img-fluid" src="images/skill2-thienvuong.png" alt="" />
+											<img class="img-fluid" src="images/skill3-thienvuong.png" alt="" />
+											<img class="img-fluid" src="images/skill4-thienvuong.png" alt="" />
+										</div>
+									</div>
+									<div class="thumb-char">
+										<img class="img-fluid" src="images/char-thienvuong.png" alt="" />
+										<a class="btn-play animate__animated animate__tada animate__infinite animate__slow"
+											href="#" title="" data-fancybox="trailer"><img class="img-fluid"
+												src="images/btn-play-char.png" alt="" /></a>
+									</div>
+								</div>
+								<!--End swipe-slide3-->
+								<div class="swiper-slide">
+									<div class="content-char">
+										<h4 class="name-char"><img class="img-fluid" src="images/name-thiennhan.png"
+												alt="" /></h4>
+										<div class="spec">
+											<h5 class="sp1-thiennhan">Cận Chiến</h5>
+											<div class="sp2-thiennhan">
+												Vũ Khí: Thương <br />
+												Hệ ngũ hành: Hoả
+											</div>
+											<div class="sp3">
+												<img class="img-fluid" src="images/img-kill-thiennhan.png" alt="" />
+											</div>
+										</div>
+										<p class="description">
+											Môn phái này gắn liền với võ công tà phái, giỏi ám sát và mưu lược. Môn phái
+											này thường phục vụ triều đình hoặc thế lực riêng, hoạt động bí ẩn và tàn
+											nhẫn trên giang hồ.
+
+										</p>
+										<div class="skills d-flex justify-content-start align-items-center">
+											<img class="img-fluid" src="images/skill1-thiennhan.png" alt="" />
+											<img class="img-fluid" src="images/skill2-thiennhan.png" alt="" />
+											<img class="img-fluid" src="images/skill3-thiennhan.png" alt="" />
+											<img class="img-fluid" src="images/skill4-thiennhan.png" alt="" />
+										</div>
+									</div>
+									<div class="thumb-char">
+										<img class="img-fluid" src="images/char-thiennhan.png" alt="" />
+										<a class="btn-play animate__animated animate__tada animate__infinite animate__slow"
+											href="#" title="" data-fancybox="trailer"><img class="img-fluid"
+												src="images/btn-play-char.png" alt="" /></a>
+									</div>
+								</div>
+								<!--End swipe-slide4-->
+								<div class="swiper-slide">
+									<div class="content-char">
+										<h4 class="name-char"><img class="img-fluid" src="images/name-thuyyen.png"
+												alt="" /></h4>
+										<div class="spec">
+											<h5 class="sp1-thuyyen">Tầm Xa</h5>
+											<div class="sp2-thuyyen">
+												Vũ Khí: Ô <br />
+												Hệ ngũ hành: Thổ
+											</div>
+											<div class="sp3">
+												<img class="img-fluid" src="images/img-kill-thuyyen.png" alt="" />
+											</div>
+										</div>
+										<p class="description">
+											Môn phái nổi tiếng với võ công tinh diệu, chiêu thức mềm mại nhưng uy lực,
+											sử dụng chiếc ô làm vũ khí đặc trưng. Vì phần lớn đệ tử là nữ nên lối chiến
+											đấu của môn phái thường toát lên vẻ thanh tao, nhẹ nhàng đầy cuốn hút.
+
+										</p>
+										<div class="skills d-flex justify-content-start align-items-center">
+											<img class="img-fluid" src="images/skill1-thuyyen.png" alt="" />
+											<img class="img-fluid" src="images/skill2-thuyyen.png" alt="" />
+											<img class="img-fluid" src="images/skill3-thuyyen.png" alt="" />
+											<img class="img-fluid" src="images/skill4-thuyyen.png" alt="" />
+										</div>
+									</div>
+									<div class="thumb-char">
+										<img class="img-fluid" src="images/char-thuyyen.png" alt="" />
+										<a class="btn-play animate__animated animate__tada animate__infinite animate__slow"
+											href="#" title="" data-fancybox="trailer"><img class="img-fluid"
+												src="images/btn-play-char.png" alt="" /></a>
+									</div>
+								</div>
+								<!--End swipe-slide5-->
+
+							</div>
+						</div>
+						<!--End mySwiper2-->
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<section id="section3" class="section section3">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page3.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page3-sm.jpg" alt="" />
+			</div>
+			<div class="section-content">
+				<h2 class="title"><img class="img-fluid" src="images/title-page3.png" alt="" /></h2>
+				<div class="desktop">
+					<div class="reward-items d-flex justify-content-center align-items-start">
+						<div class="item">
+							<img class="img-fluid" src="images/duatopcapdoi-page3.png" alt="" />
+							<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+									data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+										alt="" /></a></p>
+						</div>
+						<div class="item">
+							<img class="img-fluid" src="images/duatoplucchien-page3.png" alt="" />
+							<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+									data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+										alt="" /></a></p>
+						</div>
+						<div class="item">
+							<img class="img-fluid" src="images/duatoptodoi-page3.png" alt="" />
+							<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+									data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+										alt="" /></a></p>
+						</div>
+						<div class="item">
+							<img class="img-fluid" src="images/duatopbanghoi-page3.png" alt="" />
+							<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+									data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+										alt="" /></a></p>
+						</div>
+					</div>
+				</div>
+				<div class="mobile">
+					<div class="reward-items d-flex justify-content-start align-items-center flex-column">
+						<div>
+							<img class="img-fluid" src="images/duatoplucchien-page3.png" alt="" />
+							<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+									data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+										alt="" /></a></p>
+						</div>
+						<div class="d-flex justify-content-around align-items-center my-3">
+							<div>
+								<img class="img-fluid" src="images/duatopcapdo-page3.png" alt="" />
+								<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+										data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+											alt="" /></a></p>
+							</div>
+							<div>
+								<img class="img-fluid" src="images/duatoptodoi-page3.png" alt="" />
+								<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+										data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+											alt="" /></a></p>
+							</div>
+						</div>
+
+						<div>
+							<img class="img-fluid" src="images/duatopbanghoi-page3.png" alt="" />
+							<p class="text-center w-50 mx-auto"><a href="#popupThele" title="Thể lệ"
+									data-bs-toggle="modal"><img class="img-fluid" src="images/btn-thele-page3.png"
+										alt="" /></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="section4" class="section section4">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page4.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page4-sm.jpg" alt="" />
+			</div>
+			<div class="section-content">
+				<h2 class="title"><img class="img-fluid" src="images/title-page4.png" alt="" /></h2>
+				<div class="tab-bxh d-flex justify-content-center gap-2">
+					<a class="active" href="#" title="Bảng xếp hạng lực chiến"><img class="img-fluid"
+							src="images/btn-bxh-luchien.png" alt="" /></a>
+					<a href="#" title="Bảng xếp hạng tổ đội"><img class="img-fluid" src="images/btn-bxh-todoi.png"
+							alt="" /></a>
+					<a href="#" title="Bảng xếp hạng cặp đôi"><img class="img-fluid" src="images/btn-bxh-capdoi.png"
+							alt="" /></a>
+					<a href="#" title="Bảng xếp hạng bang hội"><img class="img-fluid" src="images/btn-bxh-banghoi.png"
+							alt="" /></a>
+				</div>
+				<div class="server d-flex justify-content-between flex-column flex-sm-row">
+					<div class="s1 row">
+						<div class="col-auto pt-1">Chọn máy chủ</div>
+						<div class="col-auto">
+							<select class="form-select">
+								<option>--Tất cả máy chủ--</option>
+								<option>Máy chủ 1</option>
+								<option>Máy chủ 1</option>
+								<option>Máy chủ 1</option>
+							</select>
+						</div>
+					</div>
+					<div class="s2 mt-3 mt-sm-0 row">
+						<div class="col-auto pt-1">Cụm máy chủ đua TOP</div>
+						<div class="col-auto">
+							<select class="form-select">
+								<option>--Tất cả máy chủ--</option>
+								<option>Máy chủ 1</option>
+								<option>Máy chủ 1</option>
+								<option>Máy chủ 1</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="tbl-bxh">
+					<table class="table table-borderless">
+						<thead>
+							<tr>
+								<th>Hạng</th>
+								<th>Máy chủ</th>
+								<th>Đội viên 1</th>
+								<th>Đội viên 2</th>
+								<th>Đội viên 3</th>
+								<th>Cấp tổ đội</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><img class="img-fluid pt-2" src="images/ic-top1.png" alt="" /></td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td><img class="img-fluid" src="images/ic-top2.png" alt="" /></td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td><img class="img-fluid" src="images/ic-top3.png" alt="" /></td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Máy chủ 1</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>Ngọc Trinh</td>
+								<td>6869</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section id="section5" class="section section5">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page5.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page5-sm.jpg" alt="" />
+			</div>
+			<div class="section-content">
+				<h2 class="title"><img class="img-fluid" src="images/title-page5.png" alt="" /></h2>
+				<div class="container1">
+					<div class="swiper mySwiper3 mx-auto" data-depth="0.2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="slider-image">
+									<img class="img-fluid" src="images/slide1-page5.png" alt="Thumb page3" />
+
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slider-image">
+									<img class="img-fluid" src="images/slide1-page5.png" alt="Thumb page3" />
+
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slider-image">
+									<img class="img-fluid" src="images/slide1-page5.png" alt="Thumb page3" />
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slider-image">
+									<img class="img-fluid" src="images/slide1-page5.png" alt="Thumb page3" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="swiper-pagination"></div>
+
+				</div>
+
+
+			</div>
+		</section>
+		<section id="section6" class="section section6">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page6.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page6-sm.jpg" alt="" />
+			</div>
+			<div class="section-content">
+				<h2 class="title"><img class="img-fluid" src="images/title-page6.png" alt="" /></h2>
+				<div class="art-page6">
+					<img class="img-fluid desktop" src="images/art-page6.png" alt="" />
+					<img class="img-fluid mobile" src="images/art-page6-m.png" alt="" />
+				</div>
+				<div class="frame-vq">
+					<div class="vq">
+						<img class="img-fluid" src="images/vq.png" alt="" />
+					</div>
+					<div class="btn-quay pulse-reverse">
+						<a href="#" title=""><img class="img-fluid" src="images/btn-quay.png" alt="" /></a>
+					</div>
+				</div>
+				<div class="desktop">
+					<div class="btn-func-group d-flex flex-column gap-4">
+						<a class="pulse-reverse" href="#" title=""><img class="img-fluid"
+								src="images/btn-thele-page6.png" alt="" /></a>
+						<a class="pulse-reverse" href="#popupLichsu" title="" data-bs-toggle="modal"><img
+								class="img-fluid" src="images/btn-lichsu-page6.png" alt="" /></a>
+						<a class="pulse-reverse" href="#popupChucmung" title="" data-bs-toggle="modal"><img
+								class="img-fluid" src="images/btn-nhanluot-page6.png" alt="" /></a>
+					</div>
+				</div>
+				<div class="mobile">
+					<div class="btn-func-group d-flex flex-column align-items-center gap-4">
+						<div class="d-flex justify-content-center gap-2">
+							<a class="pulse-reverse" href="#popupThele" title="" data-bs-toggle="modal"><img
+									class="img-fluid" src="images/btn-thele-page6.png" alt="" /></a>
+							<a class="pulse-reverse" href="#popupLichsu" title="" data-bs-toggle="modal"><img
+									class="img-fluid" src="images/btn-lichsu-page6.png" alt="" /></a>
+						</div>
+						<a class="pulse-reverse" href="#popupChucmung" title="" data-bs-toggle="modal"><img
+								class="img-fluid" src="images/btn-nhanluot-page6.png" alt="" /></a>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="section7" class="section section7">
+			<div class="section-background">
+				<img class="img-fluid desktop" src="images/bg-page7.jpg" alt="" />
+				<img class="img-fluid mobile" src="images/bg-page7-sm.jpg" alt="" />
+			</div>
+			<div class="section_content">
+				<div class="footer container1 d-flex justify-content-between align-items-center">
+					<div class="footer-content">
+						<div class="vtc-logo d-flex justify-content-center align-items-center">
+							<img src="images/logo-vtcmobile-white.png" class="img-fluid px-3" alt="">
+
+						</div>
+						<div class="footer-text font-size-16">
+							<p class="mb-1">Copright 2025 VTC Mobile. All rights reserved.</p>
+							<p class="mb-1">Công ty cổ phần VTC Dịch vụ di động - Tầng 11, Tòa nhà VTC Online</p>
+							<p class="mb-1">Số 18 Tam Trinh phường Minh Khai, quận Hai Bà Trưng, Hà Nội</p>
+							<!-- <p class="mb-1">SĐT : (84-4).39877470 | Email : vtcmobile@vtc.vn</p>
+							<p class="mb-1">Người chịu trách nhiệm quản lý nội dung: Ông Nguyễn Viết Quang Minh.</p>
+							<p class="mb-1">Giấy phép phê duyệt nội dung kịch bản trò chơi điện tử trên mạng số
+								---</p> -->
+							<p class="mb-1"><a href="#" target="_blank">Giới thiệu </a> | <a href="#"
+									target="_blank">Hướng dẫn cài đặt và gỡ bỏ</a> | <a href="#" target="_blank">Điều
+									khoản</a></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Menu float right -->
+	<div class="download">
+		<a class="download-btn download-btn-logo zoom-50" href="#" role="button" title="Cabal">
+			<img src="images/icon-game.png" class="img-fluid brightness" alt="" />
+		</a>
+		<a class="btn-img download-btn-ios zoom-50" href="#" role="button" title="Tải App Store">
+			<span class="visually-hidden">Tải Game</span>
+			<img src="images/btn-appstore-right.png" class="img-fluid brightness" alt="Tải App Store" />
+		</a>
+		<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải Google Play">
+			<span class="visually-hidden">Nạp Game</span>
+			<img src="images/btn-googleplay-right.png" class="img-fluid brightness" alt="Tải Google Play" />
+		</a>
+		<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải APK">
+			<span class="visually-hidden">Hỗ Trợ</span>
+			<img src="images/btn-ldplayer-right.png" class="img-fluid brightness" alt="Tải APK" />
+		</a>
+		<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải APK">
+			<span class="visually-hidden">Hỗ Trợ</span>
+			<img src="images/btn-taigamepc-right.png" class="img-fluid brightness" alt="Tải APK" />
+		</a>
+		<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải APK">
+			<span class="visually-hidden">Hỗ Trợ</span>
+			<img src="images/btn-napthe-right.png" class="img-fluid brightness" alt="Tải APK" />
+		</a>
+		<div class="d-flex justify-content-between btn-group-social">
+			<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải APK">
+				<span class="visually-hidden">Hỗ Trợ</span>
+				<img src="images/ic-fb-right.png" class="img-fluid brightness" alt="Tải APK" />
+			</a>
+			<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải APK">
+				<span class="visually-hidden">Hỗ Trợ</span>
+				<img src="images/ic-group-right.png" class="img-fluid brightness" alt="Tải APK" />
+			</a>
+			<a class="btn-img download-btn zoom-50" href="#" role="button" title="Tải APK">
+				<span class="visually-hidden">Hỗ Trợ</span>
+				<img src="images/ic-tiktok-right.png" class="img-fluid brightness" alt="Tải APK" />
+			</a>
+		</div>
+		<a class="btn-top px-1 zoom-50" href="#" title="Top">
+			<span class="visually-hidden">Top</span>
+			<img src="images/btn-top-right.png" class="img-fluid brightness" alt="Top" />
+		</a>
+	</div>
+	<!-- End Menu float right -->
+
+	<!-- The Modal The le -->
+	<div class="modal" id="popupThele">
+		<div class="modal-dialog modal-cs1 modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="text-center text-dark">
+						<h1>Thể lệ đua TOP</h1>
+						<p>
+							- Đua Top Dân Cày -
+						</p>
+						<p>Thời gian: OB đến OB +15.</p>
+
+						<p>Thể lệ: <br />
+							-Trong thời gian đua top, người chơi duy nhất đạt top cấp độ cao nhất khi được tổng kết sau
+							15
+							ngày kể từ ngày mở server sẽ nhận được các phần thưởng<br />
+							Top 1: iPhone 16 Pro Max.<br />
+							Top 2: Hàng Vạn KNB Giá Trị.<br />
+							Top 3: Vật Phẩm Ingame Siêu Hiếm.
+						</p>
+						<p>- Đua Top Lực Chiến LSV -</p>
+
+						<p>Thời gian: OB đến OB +15.</p>
+
+						<p>Thể lệ:<br />
+							-Trong thời gian đua top, người chơi duy nhất đạt top cấp độ cao nhất khi được tổng kết sau
+							15
+							ngày kể từ ngày mở server sẽ nhận được các phần thưởng<br />
+							Top 1: iPhone 16 Pro Max.<br />
+							Top 2: Hàng Vạn KNB Giá Trị.<br />
+							Top 3: Vật Phẩm Ingame Siêu Hiếm.
+						</p>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- The Modal Chuc Mung -->
+	<div class="modal" id="popupChucmung">
+		<div class="modal-dialog modal-cs2 modal-dialog-centered">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="text-center">
+						<h1>--Chúc Mừng--</h1>
+						<p>
+							Bạn đã nhận được 01 lượt quay!
+						</p>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- The Modal Dang nhap -->
+	<div class="modal" id="popupDangnhap">
+		<div class="modal-dialog modal-cs3 modal-dialog-centered">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="text-center">
+						<h1>--ĐĂNG NHẬP và CHIA SẺ--</h1>
+						<p class="fw-bold">
+							Nhận ngay lượt quay miễn phí
+						</p>
+						<p>
+							<a class="btn-dangnhap" href="#" title=""><img src="images/btn-dangnhap.png"
+									class="img-fluid brightness" /></a>
+						</p>
+						<p>
+							<a class="btn-chiase" href="#" title=""><img src="images/btn-chiase.png"
+									class="img-fluid brightness" /></a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- The Modal Lich Su -->
+	<div class="modal" id="popupLichsu">
+		<div class="modal-dialog modal-cs1 modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="text-center text-dark">
+						<h1>--LỊCH SỬ GIAO DỊCH--</h1>
+						<div class="tbl-lichsu">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>STT</th>
+										<th>TÊN GIẢI THƯỞNG</th>
+										<th>THỜI GIAN NHẬN</th>
+										<th>TRẠNG THÁI</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>Thẻ Scoin 100k</td>
+										<td>0h00 14/05/2025</td>
+										<td>Đã nhận</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="pagination justify-content-center mx-auto">
+								<li class="page-item"><a class="page-link" href="#">Trước</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link active" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">Sau</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script>
+		var myaudio = document.getElementById("music");
+
+		function PlayStop() {
+			$("#sound").toggleClass("inactive");
+			return myaudio.paused ? myaudio.play() : myaudio.pause();
+		};
+
+
+	</script>
+	<script src="js/res-1.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
+	<script src="js/gsap.min.js"></script>
+	<script src="js/ScrollTrigger.min.js"></script>
+</body>
+
+</html>
