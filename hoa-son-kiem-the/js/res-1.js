@@ -20,15 +20,15 @@ $(document).ready(function () {
   $(window).on('resize', function () {
     var h1 = $(window).height();
     var w1 = $(window).width();
-    if (w1 > 1024) {
+    if (w1 > 640) {
       $('.wrapper').css({ transform: "scale(" + w1 / 1920 + ")" });
       var iw1 = $(".wrapper")[0].getBoundingClientRect().width;
       var ih1 = $(".wrapper")[0].getBoundingClientRect().height;
       $('body').css({ height: ih1, width: iw1 });
 
     }
-    else if (320 < w1 < 1024) {
-      $('.wrapper').css({ transform: "scale(" + w1 / 1024 + ")" });
+    else if (320 < w1 < 640) {
+      $('.wrapper').css({ transform: "scale(" + w1 / 640 + ")" });
       var mw1 = $(".wrapper")[0].getBoundingClientRect().width;
       var mh1 = $(".wrapper")[0].getBoundingClientRect().height;
       $('body').css({ height: mh1, width: mw1 });
